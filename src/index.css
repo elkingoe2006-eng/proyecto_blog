@@ -1,0 +1,304 @@
+/* src/index.css */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #0d1117, #000);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Contenedor principal */
+.app-container {
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 1.2s ease;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #ff0080, #7928ca);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px #ff00c8a8;
+}
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+.header p {
+  margin-top: 10px;
+  color: #fff;
+}
+
+/* API title */
+.api-title {
+  color: #ff99cc;
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+.api-title span {
+  color: #ff4dd2;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 25px 0;
+}
+.search-bar input {
+  padding: 10px 15px;
+  width: 220px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #1a1f29;
+  color: white;
+}
+.search-bar input::placeholder {
+  color: #aaa;
+}
+.search-bar button {
+  background: #ff0080;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.search-bar button:hover {
+  background: #ff66b2;
+}
+
+/* Anime Cards */
+.anime-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+.anime-card {
+  background: #161b22;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #ff0099a0;
+  transition: 0.3s;
+}
+.anime-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff66cc;
+}
+.anime-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+.anime-info {
+  padding: 15px;
+}
+.anime-info h3 {
+  color: #ff66b2;
+  margin-bottom: 8px;
+}
+.anime-info p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.anime-info a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  text-decoration: none;
+  background: #ff0080;
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.anime-info a:hover {
+  background: #ff4dd2;
+}
+
+/* About Section */
+.about {
+  background: #1e232a;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 15px;
+  width: 85%;
+  box-shadow: 0 0 20px #ff0080;
+}
+.about a {
+  color: #ff66cc;
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  padding: 15px;
+  margin-top: 40px;
+  border-top: 2px solid #ff0080;
+  font-size: 0.9rem;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================== */
+/* NUEVOS COMPONENTES ESTILO */
+/* =============================== */
+
+/* FAVORITOS */
+.favorites {
+  background: #1a1f29;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 40px auto;
+  width: 90%;
+  box-shadow: 0 0 20px #ff0080;
+}
+.favorites h2 {
+  color: #ff66cc;
+}
+.remove-btn {
+  background: #ff0033;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+.remove-btn:hover {
+  background: #ff3366;
+}
+
+/* NOTICIAS */
+.news {
+  margin: 50px auto;
+  background: #12161d;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #ff0080;
+  width: 90%;
+}
+.news h2 {
+  color: #ff66cc;
+  margin-bottom: 20px;
+}
+.news-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.news-card {
+  background: #161b22;
+  border-radius: 10px;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px #ff0080a0;
+}
+.news-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.news-card a {
+  display: block;
+  margin-top: 8px;
+  color: #ff66cc;
+  text-decoration: none;
+}
+.news-card a:hover {
+  text-decoration: underline;
+}
+
+/* RECOMENDACIONES */
+.recommendations {
+  margin: 50px auto;
+  background: #161b22;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #ff0080;
+  width: 90%;
+}
+.recommendations h2 {
+  color: #ff66cc;
+}
+.reload-btn {
+  background: #ff0080;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+.reload-btn:hover {
+  background: #ff66b2;
+  transform: scale(1.);
+}
+
+
+/* 🎥 Video de fondo */
+.background-video {
+  position: fixed; /* Fijo al fondo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Se ajusta a la pantalla */
+  z-index: -2; /* Detrás del contenido */
+}
+
+/* 🔲 Capa oscura encima del video */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semitransparente */
+  z-index: -1; /* justo encima del video */
+}
+
+/* 📱 Contenedor general */
+.app-container {
+  position: relative;
+  min-height: 100vh;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  overflow-x: hidden;
+}
+
+
+.news-button {
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.news-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffff;
+}
