@@ -28,21 +28,17 @@ function App() {
   };
 
   // Llamar la API cada vez que cambia la búsqueda
- useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("favorites")) || [];
-    setFavorites(stored);
-  }, []);
+  useEffect(() => {
+    fetchAnimes(search);
+  }, [search]);
 
- const toggleFavorite = (anime) => {
-    const exists = favorites.some((fav) => fav.mal_id === anime.mal_id);
-    let updated;
-    if (exists) {
-      updated = favorites.filter((fav) => fav.mal_id !== anime.mal_id);
+  const toggleFavorite = (anime) => {
+    const isFav = favorites.find((fav) => fav.mal_id === anime.mal_id);
+    if (isFav) {
+      setFavorites(favorites.filter((fav) => fav.mal_id !== anime.mal_id));
     } else {
-      updated = [...favorites, anime];
+      setFavorites([...favorites, anime]);
     }
-    setFavorites(updated);
-    localStorage.setItem("favorites", JSON.stringify(updated));
   };
 
 
@@ -63,11 +59,10 @@ function App() {
       <SearchBar setSearch={setSearch} />
       <h2 className="api-title">Resultados de la API: <span>{search}</span></h2>
           <AnimeList animes={animes} toggleFavorite={toggleFavorite} favorites={favorites} />
-           <Favorites />
+           <Favorites favorites={favorites} toggleFavorite={toggleFavorite} />
            <Recommendations />
       <News />
       <About />
-      
       <Footer />
     </div>
   );
